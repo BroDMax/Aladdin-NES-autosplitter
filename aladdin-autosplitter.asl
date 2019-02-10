@@ -88,7 +88,7 @@ split
                 if (settings["stg52"]) return true;
                 break;
             case 0x13:
-                if (settings["st6"]) return true;
+                if (settings["stg6"]) return true;
                 break;
             case 0x15:
                 if (settings["stg7"]) return true;
