@@ -1,6 +1,6 @@
 state("fceux")
 {
-    ushort reset:   0x3B1388, 0x0007;
+    uint reset:     0x3B1388, 0x0018;
     byte start:     0x3B1388, 0x030D;
     byte level:     0x3B1388, 0x0024;
     byte demo:      0x3B1388, 0x00f8;
@@ -8,7 +8,7 @@ state("fceux")
 
 state("nestopia")
 {
-    ushort reset:   "nestopia.exe", 0x1B2BCC, 0x00, 0x08, 0x0C, 0x0C, 0x6F;
+    uint reset:     "nestopia.exe", 0x1B2BCC, 0x00, 0x08, 0x0C, 0x0C, 0x80;
     byte start:     "nestopia.exe", 0x1B2BCC, 0x00, 0x08, 0x0C, 0x0C, 0x375;
     byte level:     "nestopia.exe", 0x1B2BCC, 0x00, 0x08, 0x0C, 0x0C, 0x8C;
     byte demo:      "nestopia.exe", 0x1B2BCC, 0x00, 0x08, 0x0C, 0x0C, 0x160;
@@ -16,7 +16,7 @@ state("nestopia")
 
 state("mednafen")
 {
-    ushort reset:   "mednafen.exe", 0xBE1CE7;
+    uint reset:     "mednafen.exe", 0xBE1CF8;
     byte start:     "mednafen.exe", 0xBE1FED;
     byte level:     "mednafen.exe", 0xBE1D04;
     byte demo:      "mednafen.exe", 0xBE1DD8;
@@ -102,7 +102,7 @@ split
 
 reset
 {
-    return (current.level == 0x00) && (old.reset == 0x1918) && (current.reset == 0x1B1A);
+    return (current.level == 0x00) &&(current.reset == 0x9BBF831C);
 }
 
 start
