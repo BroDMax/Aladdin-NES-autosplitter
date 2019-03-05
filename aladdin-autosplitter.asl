@@ -22,6 +22,30 @@ state("mednafen")
     byte demo:      "mednafen.exe", 0xBE1DD8;
 }
 
+state("punes64")
+{
+    uint reset:     0x13CDE58;
+    byte start:     0x13CE14D;
+    byte level:     0x13CDE64;
+    byte demo:      0x13CDF38;
+}
+
+state("nintendulator")
+{
+    uint reset:     0x5C0E0;
+    byte start:     0x5C3D5;
+    byte level:     0x5C0EC;
+    byte demo:      0x5C1C0;
+}
+
+state("mesen")
+{
+    uint reset:     "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x18;
+    byte start:     "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x30D;
+    byte level:     "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x24;
+    byte demo:      "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0xf8;
+}
+
 startup
 {
     settings.Add("stg11", true, "Stage 1-1");
